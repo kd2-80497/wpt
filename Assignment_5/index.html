@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Registration</title>
+  </head>
+  <body>
+    <div>
+      <center>
+        <h1>Customer Registration</h1>
+      </center>
+    </div>
+    <center>
+    <div style="border: 2px black solid; width: 500px; background-color: bisque; ">
+      
+        <table>
+          <tr>
+            <td>Cnum :</td>
+            <td><input type="number" id="cnumid" /></td>
+            <td id="cnumerrorid"></td>
+          </tr>
+          <tr>
+            <td>Cname :</td>
+            <td><input type="text" id="cnameid" /></td>
+            <td id="cnameerrorid"></td>
+          </tr>
+          <tr>
+            <td>Email :</td>
+            <td><input type="email"  id="emailid"/></td>
+            <td id="emailerrorid"></td>
+          </tr>
+          <tr>
+            <td>Pasword :</td>
+            <td><input type="password" id="passid"/></td>
+            <td id="passerrorid"></td>
+          </tr>
+          <tr>
+            <td>Confirm password :</td>
+            <td><input type="password" id="newPassid" /></td>
+            <td id="newPasserrorid"></td>
+          </tr>
+          <tr>
+            <td>Mobile NUmber :</td>
+            <td><input type="number" id="mobid"/></td>
+            <td id="moberrorid"></td>
+          </tr>
+          <tr>
+            <td>City :</td>
+            <td><input type="text" id="cityid" /></td>
+            <td id="cityerrorid"></td>
+          </tr>
+          <tr>
+            <td >State :</td>
+            <td >
+              <select name="" id="" required>
+                <option value="">Madhya Pradesh</option>
+                <option value="">Uttar Pradesh</option>
+                <option value="">Himachal Pradesh</option>
+                <option value="">Maharashtra</option>
+              </select>
+            </td>
+            <td id="stateerrorid"></td>
+          </tr>
+          <tr>
+            <td>Pincode :</td>
+            <td><input type="number" id="pinid"/></td>
+            <td id="pinerrorid"></td>
+          </tr>
+          <tr>
+            <td>Request_Payment_Mode</td>
+            <td>
+              <input type="checkbox" name="a" z/>Credit 
+              <input type="checkbox" name="a" />Debit
+              <input type="checkbox" name="b"/>UPI
+            </td>
+            <td id="reqerrorid"></td>
+          </tr>
+          <tr>
+            <td colspan="3">
+                <center>
+              <input type="button" value="Submit"  onclick="DoRegister()"/>
+            </center>
+            </td>
+          </tr>
+        </table>
+     
+    </div>
+</center>\
+<script src="validation.js"></script>
+<script>
+    var mess = "Enter this Field!!!"
+    function DoRegister(){
+        validationForEmpty("cnumid","cnumerrorid",mess);
+        validationForEmpty("cnameid","cnameerrorid",mess);
+        validationForEmpty("emailid","emailerrorid",mess);
+        validationForEmpty("cityid","cityerrorid",mess);
+        pwMatching("passid", "newPassid", "passerrorid","newPasserrorid")
+    }
+</script>
+  </body>
+</html>
